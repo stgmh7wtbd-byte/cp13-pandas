@@ -24,6 +24,8 @@ import pandas as pd
 # "comma separated values" and is a common way of storing data.
 # Print out the DataFrame after you import the .csv file.
 
+df= pd.read_csv('dancers.csv')
+print(df)
 
 # 2. ALTER THE DATAFRAME THEN EXPORT IT
 # Add an asterisk to everyone's name, then save it as altered_dancers.csv
