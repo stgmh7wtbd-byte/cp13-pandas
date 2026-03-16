@@ -51,6 +51,11 @@ print(df_dancers, "\n")
 # You can access a specific column by giving its name in square brackets.
 # Try printing out just the "Dancer" column
 
+print()
+print(df_dancers['Dancer']) #grabbing a single column from the dataframe - it includes the index
+print()
+print(df_dancers[['Dancer', 'Age']]) #grabbing multiple columns #more than one column lookup means we need another bracket because we are making a list of the columns we want to see
+
 
 '''
 WHY DID IT PRINT WEIRD WHEN THERE WAS ONLY ONE COLUMN?
@@ -69,6 +74,11 @@ are stored as "object" datatypes.
 # Add 1 to the age of everyone in the DataFrame. Print out the DataFrame to
 # see if you did it correctly.
 
+clear_screen()
+print(df_dancers)
+df_dancers["Age"] += 1 #adds one to their age
+print(df_dancers)
+
 
 # 3. ACCESS MULTIPLE COLUMNS
 # You can access multiple columns by giving a list inside the square brackets
@@ -85,6 +95,14 @@ are stored as "object" datatypes.
 # square brackets with .iloc instead of parentheses, like .iloc[0]. Get the 3rd
 # row and print it out.
 
+clear_screen()
+print(df_dancers)
+print()
+print(df_dancers.iloc[2])
+print()
+print(df_dancers.iloc[2,2])
+
+
 
 # 5. ACCESS A SPECIFIC ROW AND COLUMN WITH .iloc
 # After you specify a row location, you can specify a column location
@@ -94,11 +112,22 @@ are stored as "object" datatypes.
 # You can access the last element by using -1, second to last using -2, etc.
 # Try printing everything from the last row of the dataframe:
 
+print(df_dancers.iloc[-1]) #gets last row
 
 # 7. CHANGE DATA USING .iloc
 # Try to change the age of the 3rd row, 3rd column to 30 using .iloc. Print out
 # the dataframe again to see if your change occured.
+clear_screen()
 
+#order goes row, column
+df_dancers.iloc[2,2]= 30
+print(df_dancers)
+
+#.iloc uses integer index locations for rows and columns
+#.loc uses labels for rows and columns. the default label for rows is the same as the index\
+
+#2 is technically the 3rd row lol 
+print(df_dancers.loc[2, 'Age'])
 
 
 '''
