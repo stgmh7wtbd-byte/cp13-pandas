@@ -23,6 +23,19 @@ students_dict = {
 
 # PART 1:
 # Convert the dictionary to a Pandas DataFrame and print it out.
+import pandas
+df = pandas.DataFrame(students_dict)
+
+print(df['Math'])
+print()
+print(df.iloc[2])
+
+print()
+print()
+df.loc[0, 'English'] = 75
+df.iloc[4, 3] = 85
+print(df)
+
 
 
 # PART 2:
